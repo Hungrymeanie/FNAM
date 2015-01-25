@@ -1,11 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Button : MonoBehaviour {
+public class Button_Light : MonoBehaviour {
 	public bool buttonColor = false;
-	public Material Open;
-	public Material Close;
-	public DoorMovement Door;
+	public Material Lightoff;
+	public Material Lighton;
+	public Light light;
 	// Use this for initialization
 	void Start () {
 	
@@ -25,13 +25,14 @@ public class Button : MonoBehaviour {
 			    }
 
 		if (buttonColor == false) {
-			renderer.material = Open;
-			Door.openOrClosed = false;
+			renderer.material = Lighton;
+			light.enabled = false;
 			}
 	    else {
-			renderer.material = Close;
-			Door.openOrClosed = true;
+			renderer.material = Lightoff;
+			light.enabled = true;
 		}
+
 
 	}
 }
