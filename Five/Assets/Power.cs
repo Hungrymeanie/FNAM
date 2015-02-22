@@ -5,7 +5,7 @@ public class Power : MonoBehaviour {
 	public float value = 100f;
 	private int usage = 1;
 	public int maxUsage = 4;
-	public float speed = 0.5f;
+	public float speed = 0.1f;
 
 	// Use this for initialization
 	void Start () {
@@ -22,9 +22,9 @@ public class Power : MonoBehaviour {
 			usage = 1;
 	}
 
-	void IncreaseUsage(int inc)
+	public void ChangeUsage(int inc)
 	{
-		usage = inc;
+		usage += inc;
 	}
 
 	void OnGUI()

@@ -6,6 +6,7 @@ public class Button_Light : MonoBehaviour {
 	public Material Lightoff;
 	public Material Lighton;
 	public Light light;
+	public Power usage;
 	// Use this for initialization
 	void Start () {
 	
@@ -19,10 +20,15 @@ public class Button_Light : MonoBehaviour {
 	if (Physics.Raycast (Camera.main.ScreenPointToRay(Input.mousePosition), out hit)){
 				if(hit.collider.gameObject == gameObject){
 					buttonColor = !buttonColor;
-
+					if (buttonColor == true) {
+						usage.ChangeUsage (1);
+					}else{
+						usage.ChangeUsage (-1);
+					}
 				}
 			}
-			    }
+		}
+			    
 
 		if (buttonColor == false) {
 			renderer.material = Lighton;
